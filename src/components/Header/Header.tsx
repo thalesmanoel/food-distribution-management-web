@@ -1,4 +1,5 @@
 import "./Header.css";
+import { Bell, Menu, UserRound } from "lucide-react";
 
 interface Props {
   toggleSidebar: () => void;
@@ -14,9 +15,7 @@ export function Header({ toggleSidebar }: Props) {
           type="button"
           aria-label="Alternar menu lateral"
         >
-          <span />
-          <span />
-          <span />
+          <Menu size={21} strokeWidth={2.5} aria-hidden="true" />
         </button>
 
         <div>
@@ -27,18 +26,18 @@ export function Header({ toggleSidebar }: Props) {
 
       <div className="header-right">
         <button className="notification" type="button" aria-label="Notificações">
-          <span className="notification-icon" aria-hidden="true" />
+          <Bell size={20} strokeWidth={2.35} aria-hidden="true" />
           <span className="badge">3</span>
         </button>
 
         <div className="user">
           <div className="user-info">
-            <strong>Ana Souza</strong>
+            <strong>Thales Carrion</strong>
             <small>Administrador</small>
           </div>
 
           <div className="avatar">
-            AS
+            <UserRound size={19} strokeWidth={2.35} aria-hidden="true" />
           </div>
         </div>
       </div>

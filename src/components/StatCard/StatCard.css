@@ -47,8 +47,15 @@
   height: 2.35rem;
   display: inline-flex;
   flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
   border-radius: 8px;
   background: rgba(244, 196, 48, 0.18);
+  color: #a57b00;
+}
+
+.stat-card-marker svg {
+  display: block;
 }
 
 .stat-card:nth-child(2)::before {
@@ -57,6 +64,7 @@
 
 .stat-card:nth-child(2) .stat-card-marker {
   background: rgba(46, 125, 50, 0.14);
+  color: var(--color-secondary);
 }
 
 .stat-card:nth-child(3)::before {
@@ -65,6 +73,7 @@
 
 .stat-card:nth-child(3) .stat-card-marker {
   background: rgba(30, 30, 30, 0.1);
+  color: var(--color-black);
 }
 
 .stat-card:nth-child(4)::before {
@@ -73,6 +82,7 @@
 
 .stat-card:nth-child(4) .stat-card-marker {
   background: rgba(198, 40, 40, 0.12);
+  color: var(--color-tertiary);
 }
 
 @media (max-width: 560px) {

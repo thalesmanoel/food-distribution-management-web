@@ -1,6 +1,7 @@
 import { StatCard } from "../../../components/StatCard/StatCard";
 import { MainLayout } from "../../../layouts/MainLayout/MainLayout";
 import "./Dashboard.css";
+import { PackageCheck, ShoppingBag, TriangleAlert, Users } from "lucide-react";
 
 export function Dashboard() {
   return (
@@ -21,21 +22,25 @@ export function Dashboard() {
             <StatCard
               title="Total de Pedidos"
               value="1.240"
+              icon={ShoppingBag}
             />
 
             <StatCard
               title="Clientes Ativos"
               value="847"
+              icon={Users}
             />
 
             <StatCard
               title="Produtos"
               value="356"
+              icon={PackageCheck}
             />
 
             <StatCard
               title="Alertas"
               value="12"
+              icon={TriangleAlert}
             />
           </div>
         </section>

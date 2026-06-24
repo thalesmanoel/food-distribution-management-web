@@ -57,18 +57,14 @@
   height: 2.75rem;
   display: inline-flex;
   flex: 0 0 auto;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0.26rem;
 }
 
-.menu-toggle span {
-  width: 1.12rem;
-  height: 2px;
+.menu-toggle svg,
+.notification svg,
+.avatar svg {
   display: block;
-  border-radius: 999px;
-  background: var(--color-black);
 }
 
 .menu-toggle:hover,
@@ -97,39 +93,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-}
-
-.notification-icon {
-  position: relative;
-  width: 0.92rem;
-  height: 1rem;
-  display: block;
-  border: 2px solid var(--color-black);
-  border-bottom: 0;
-  border-radius: 999px 999px 0 0;
-}
-
-.notification-icon::before {
-  content: "";
-  position: absolute;
-  right: -0.23rem;
-  bottom: -0.2rem;
-  left: -0.23rem;
-  height: 2px;
-  border-radius: 999px;
-  background: var(--color-black);
-}
-
-.notification-icon::after {
-  content: "";
-  position: absolute;
-  bottom: -0.42rem;
-  left: 50%;
-  width: 0.32rem;
-  height: 0.32rem;
-  border-radius: 50%;
-  background: var(--color-black);
-  transform: translateX(-50%);
 }
 
 .badge {
@@ -188,8 +151,6 @@
   border-radius: 8px;
   background: var(--color-secondary);
   color: var(--color-white);
-  font-size: 0.85rem;
-  font-weight: 800;
   box-shadow: 0 10px 22px rgba(46, 125, 50, 0.18);
 }
 

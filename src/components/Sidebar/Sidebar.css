@@ -40,9 +40,12 @@
   border-radius: 8px;
   background: var(--color-primary);
   color: var(--color-black);
-  font-size: 0.88rem;
-  font-weight: 800;
   box-shadow: 0 12px 28px rgba(244, 196, 48, 0.2);
+}
+
+.logo-icon svg,
+.sidebar-menu-icon svg {
+  display: block;
 }
 
 .sidebar-brand {
@@ -115,8 +118,6 @@
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.08);
   color: rgba(255, 255, 255, 0.88);
-  font-size: 0.68rem;
-  font-weight: 800;
 }
 
 .sidebar-menu .active .sidebar-menu-icon {
