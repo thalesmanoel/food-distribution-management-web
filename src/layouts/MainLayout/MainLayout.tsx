@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./MainLayout.css";
-import { Sidebar } from "../../components/Sidebar/sidebar";
-import { Header } from "../../components/Header/header";
+import { Sidebar } from "../../components/Sidebar/Sidebar";
+import { Header } from "../../components/Header/Header";
 
 interface Props {
   children: React.ReactNode;
@@ -21,9 +21,9 @@ export function MainLayout({ children }: Props) {
       <div className="layout-main">
         <Header toggleSidebar={toggleSidebar} />
 
-        <div className="layout-content">
+        <main className="layout-content">
           {children}
-        </div>
+        </main>
       </div>
     </div>
   );

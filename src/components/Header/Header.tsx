@@ -7,21 +7,32 @@ interface Props {
 export function Header({ toggleSidebar }: Props) {
   return (
     <header className="header">
-
       <div className="header-left">
-        <button onClick={toggleSidebar}>☰</button>
-        <span>Dashboard</span>
+        <button
+          className="menu-toggle"
+          onClick={toggleSidebar}
+          type="button"
+          aria-label="Alternar menu lateral"
+        >
+          <span />
+          <span />
+          <span />
+        </button>
+
+        <div>
+          <span className="header-kicker">Visão geral</span>
+          <strong>Dashboard</strong>
+        </div>
       </div>
 
       <div className="header-right">
-
-        <div className="notification">
-          🔔
+        <button className="notification" type="button" aria-label="Notificações">
+          <span className="notification-icon" aria-hidden="true" />
           <span className="badge">3</span>
-        </div>
+        </button>
 
         <div className="user">
-          <div>
+          <div className="user-info">
             <strong>Ana Souza</strong>
             <small>Administrador</small>
           </div>
@@ -30,9 +41,7 @@ export function Header({ toggleSidebar }: Props) {
             AS
           </div>
         </div>
-
       </div>
-
     </header>
   );
 }

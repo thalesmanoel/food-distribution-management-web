@@ -5,34 +5,41 @@ import "./Dashboard.css";
 export function Dashboard() {
   return (
     <MainLayout>
+      <div className="dashboard-page">
+        <section className="dashboard-hero" aria-labelledby="dashboard-title">
+          <div>
+            <span className="dashboard-eyebrow">Resumo operacional</span>
+            <h1 id="dashboard-title">Bom dia, Thales</h1>
+            <p>Aqui está o resumo do sistema hoje.</p>
+          </div>
 
-      <h1>Bom dia, Ana</h1>
-      <p>Aqui está o resumo do sistema hoje.</p>
+          <span className="dashboard-status">Sistema ativo</span>
+        </section>
 
-      <div className="stats-grid">
+        <section className="stats-section" aria-label="Indicadores principais">
+          <div className="stats-grid">
+            <StatCard
+              title="Total de Pedidos"
+              value="1.240"
+            />
 
-        <StatCard
-          title="Total de Pedidos"
-          value="1.240"
-        />
+            <StatCard
+              title="Clientes Ativos"
+              value="847"
+            />
 
-        <StatCard
-          title="Clientes Ativos"
-          value="847"
-        />
+            <StatCard
+              title="Produtos"
+              value="356"
+            />
 
-        <StatCard
-          title="Produtos"
-          value="356"
-        />
-
-        <StatCard
-          title="Alertas"
-          value="12"
-        />
-
+            <StatCard
+              title="Alertas"
+              value="12"
+            />
+          </div>
+        </section>
       </div>
-
     </MainLayout>
   );
 }

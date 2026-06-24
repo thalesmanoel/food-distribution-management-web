@@ -1,15 +1,82 @@
 .stat-card {
-  background: white;
-  border-radius: 12px;
-  padding: 20px;
-
+  position: relative;
+  min-height: 9rem;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  justify-content: space-between;
+  gap: 1.4rem;
+  padding: 1.25rem;
+  overflow: hidden;
+  border: 1px solid rgba(30, 30, 30, 0.08);
+  border-radius: 8px;
+  background: var(--color-white);
+  box-shadow: 0 16px 34px rgba(30, 30, 30, 0.07);
+}
 
-  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+.stat-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 0.25rem;
+  background: var(--color-primary);
+}
+
+.stat-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.9rem;
+}
+
+.stat-card span {
+  color: rgba(30, 30, 30, 0.62);
+  font-size: 0.9rem;
+  font-weight: 800;
+  line-height: 1.35;
 }
 
 .stat-card strong {
-  font-size: 28px;
+  color: var(--color-black);
+  font-size: clamp(1.9rem, 3vw, 2.35rem);
+  line-height: 1;
+  font-weight: 800;
+}
+
+.stat-card-marker {
+  width: 2.35rem;
+  height: 2.35rem;
+  display: inline-flex;
+  flex: 0 0 auto;
+  border-radius: 8px;
+  background: rgba(244, 196, 48, 0.18);
+}
+
+.stat-card:nth-child(2)::before {
+  background: var(--color-secondary);
+}
+
+.stat-card:nth-child(2) .stat-card-marker {
+  background: rgba(46, 125, 50, 0.14);
+}
+
+.stat-card:nth-child(3)::before {
+  background: var(--color-black);
+}
+
+.stat-card:nth-child(3) .stat-card-marker {
+  background: rgba(30, 30, 30, 0.1);
+}
+
+.stat-card:nth-child(4)::before {
+  background: var(--color-tertiary);
+}
+
+.stat-card:nth-child(4) .stat-card-marker {
+  background: rgba(198, 40, 40, 0.12);
+}
+
+@media (max-width: 560px) {
+  .stat-card {
+    min-height: 8rem;
+  }
 }
