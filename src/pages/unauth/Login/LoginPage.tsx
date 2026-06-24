@@ -22,8 +22,16 @@ export function LoginPage() {
 
   return (
     <div className="login-container">
-      <div className="login-left">
+      <section className="login-left" aria-label="Apresentação do sistema">
+        <div className="login-brand">
+          <span className="login-brand-mark" aria-hidden="true">
+            TS
+          </span>
+          <span>Sistema Tem Sabor</span>
+        </div>
+
         <div className="left-content">
+          <span className="login-eyebrow">Gestão com sabor</span>
           <h1>
             Sistema Tem Sabor
           </h1>
@@ -32,13 +40,24 @@ export function LoginPage() {
             Uma experiência moderna, segura e intuitiva.
           </p>
         </div>
-      </div>
 
-      <div className="login-right">
+        <div className="login-visual" aria-hidden="true">
+          <span className="login-visual-tile login-visual-tile-primary" />
+          <span className="login-visual-tile login-visual-tile-white" />
+          <span className="login-visual-tile login-visual-tile-dark" />
+          <span className="login-visual-tile login-visual-tile-red" />
+        </div>
+      </section>
+
+      <section className="login-right" aria-label="Acesso ao sistema">
         <div className="form-container">
-          <h2>Login</h2>
+          <div className="form-header">
+            <span className="form-eyebrow">Acesso ao sistema</span>
+            <h2>Entrar</h2>
+            <p>Bem-vindo de volta.</p>
+          </div>
 
-          <form onSubmit={handleSubmit}>
+          <form className="login-form" onSubmit={handleSubmit}>
             <Input
               label="Email"
               type="email"
@@ -65,7 +84,7 @@ export function LoginPage() {
             <Button type="submit">Entrar</Button>
           </form>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
