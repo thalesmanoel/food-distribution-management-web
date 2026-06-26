@@ -16,7 +16,7 @@ interface Customer {
   cnpj: string;
   phone: string;
   address: string;
-  description: string;
+  description?: string;
 }
 
 type CustomerSearchColumn =
@@ -24,8 +24,7 @@ type CustomerSearchColumn =
   | "email"
   | "cnpj"
   | "phone"
-  | "address"
-  | "description";
+  | "address";
 
 const PAGE_SIZE = 6;
 
@@ -35,7 +34,6 @@ const customerFilterOptions: DataTableFilterOption<CustomerSearchColumn>[] = [
   { label: "CNPJ", value: "cnpj" },
   { label: "Telefone", value: "phone" },
   { label: "Endereço", value: "address" },
-  { label: "Descrição", value: "description" },
 ];
 
 const customerColumns: DataTableColumn<Customer>[] = [
@@ -44,12 +42,6 @@ const customerColumns: DataTableColumn<Customer>[] = [
   { key: "cnpj", header: "CNPJ", accessor: "cnpj", minWidth: "10rem" },
   { key: "phone", header: "Telefone", accessor: "phone", minWidth: "9rem" },
   { key: "address", header: "Endereço", accessor: "address", minWidth: "16rem" },
-  {
-    key: "description",
-    header: "Descrição",
-    accessor: "description",
-    minWidth: "15rem",
-  },
 ];
 
 const initialCustomers: Customer[] = [
@@ -60,7 +52,6 @@ const initialCustomers: Customer[] = [
     cnpj: "12.345.678/0001-90",
     phone: "(11) 98452-1187",
     address: "Rua das Palmeiras, 284 - Sao Paulo, SP",
-    description: "Cliente recorrente com pedidos semanais para reposicao de estoque.",
   },
   {
     id: 2,
@@ -69,7 +60,6 @@ const initialCustomers: Customer[] = [
     cnpj: "23.456.789/0001-01",
     phone: "(19) 99741-3208",
     address: "Avenida Brasil, 1180 - Campinas, SP",
-    description: "Prioriza entregas pela manha e produtos de alto giro.",
   },
   {
     id: 3,
@@ -78,7 +68,6 @@ const initialCustomers: Customer[] = [
     cnpj: "34.567.890/0001-12",
     phone: "(21) 98873-4501",
     address: "Rua Jardim Botanico, 612 - Rio de Janeiro, RJ",
-    description: "Atendimento corporativo com faturamento mensal.",
   },
   {
     id: 4,
@@ -87,7 +76,6 @@ const initialCustomers: Customer[] = [
     cnpj: "45.678.901/0001-23",
     phone: "(31) 97566-0021",
     address: "Rua dos Guajajaras, 95 - Belo Horizonte, MG",
-    description: "Solicita variedade maior de produtos artesanais.",
   },
   {
     id: 5,
@@ -96,7 +84,6 @@ const initialCustomers: Customer[] = [
     cnpj: "56.789.012/0001-34",
     phone: "(41) 99120-4400",
     address: "Rua XV de Novembro, 420 - Curitiba, PR",
-    description: "Cliente com alta demanda em datas comemorativas.",
   },
   {
     id: 6,
@@ -105,7 +92,6 @@ const initialCustomers: Customer[] = [
     cnpj: "67.890.123/0001-45",
     phone: "(48) 99880-1144",
     address: "Avenida Beira Mar Norte, 780 - Florianopolis, SC",
-    description: "Pedidos concentrados para cafe da manha e eventos internos.",
   },
   {
     id: 7,
@@ -114,7 +100,6 @@ const initialCustomers: Customer[] = [
     cnpj: "78.901.234/0001-56",
     phone: "(51) 97654-2188",
     address: "Avenida Farrapos, 1500 - Porto Alegre, RS",
-    description: "Volume alto de compra com retirada agendada.",
   },
   {
     id: 8,
@@ -123,7 +108,6 @@ const initialCustomers: Customer[] = [
     cnpj: "89.012.345/0001-67",
     phone: "(62) 99870-3030",
     address: "Rua 9, 142 - Goiania, GO",
-    description: "Atendimento personalizado para cardapio sazonal.",
   },
   {
     id: 9,
@@ -132,7 +116,6 @@ const initialCustomers: Customer[] = [
     cnpj: "90.123.456/0001-78",
     phone: "(85) 98712-6540",
     address: "Avenida Santos Dumont, 2020 - Fortaleza, CE",
-    description: "Busca produtos prontos para consumo rapido.",
   },
   {
     id: 10,
@@ -141,7 +124,6 @@ const initialCustomers: Customer[] = [
     cnpj: "01.234.567/0001-89",
     phone: "(81) 98234-7655",
     address: "Rua da Aurora, 510 - Recife, PE",
-    description: "Compra insumos selecionados para producao propria.",
   },
   {
     id: 11,
@@ -150,7 +132,6 @@ const initialCustomers: Customer[] = [
     cnpj: "11.222.333/0001-44",
     phone: "(71) 99750-8112",
     address: "Rua Chile, 75 - Salvador, BA",
-    description: "Foco em produtos frescos e fornecedores locais.",
   },
   {
     id: 12,
@@ -159,7 +140,6 @@ const initialCustomers: Customer[] = [
     cnpj: "22.333.444/0001-55",
     phone: "(61) 98622-9090",
     address: "SCS Quadra 2, Bloco C - Brasilia, DF",
-    description: "Demanda variavel conforme agenda de eventos.",
   },
 ];
 
