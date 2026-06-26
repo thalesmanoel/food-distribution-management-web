@@ -8,10 +8,14 @@ interface Props {
 
 export function Header({ toggleSidebar }: Props) {
   const location = useLocation();
-  const pageInfo =
-    location.pathname === "/clientes"
-      ? { kicker: "Cadastros", title: "Clientes" }
-      : { kicker: "Visão geral", title: "Dashboard" };
+  const pageInfoByPath: Record<string, { kicker: string; title: string }> = {
+    "/dashboard": { kicker: "Visão geral", title: "Dashboard" },
+    "/pedidos": { kicker: "Operação", title: "Pedidos" },
+    "/clientes": { kicker: "Cadastros", title: "Clientes" },
+    "/produtos": { kicker: "Catálogo", title: "Produtos" },
+    "/movimentacoes": { kicker: "Estoque", title: "Movimentações" },
+  };
+  const pageInfo = pageInfoByPath[location.pathname] ?? pageInfoByPath["/dashboard"];
 
   return (
     <header className="header">

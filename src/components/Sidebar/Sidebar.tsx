@@ -2,6 +2,7 @@ import "./Sidebar.css";
 import { NavLink } from "react-router-dom";
 import type { LucideIcon } from "lucide-react";
 import {
+  ArrowLeftRight,
   ChartColumn,
   ClipboardList,
   LayoutDashboard,
@@ -24,9 +25,10 @@ interface MenuItem {
 
 const menuItems: MenuItem[] = [
   { label: "Dashboard", icon: LayoutDashboard, to: "/dashboard" },
-  { label: "Pedidos", icon: ClipboardList },
+  { label: "Pedidos", icon: ClipboardList, to: "/pedidos" },
   { label: "Clientes", icon: Users, to: "/clientes" },
-  { label: "Produtos", icon: Package },
+  { label: "Produtos", icon: Package, to: "/produtos" },
+  { label: "Movimentações", icon: ArrowLeftRight, to: "/movimentacoes" },
   { label: "Relatórios", icon: ChartColumn },
   { label: "Configurações", icon: Settings },
 ];
