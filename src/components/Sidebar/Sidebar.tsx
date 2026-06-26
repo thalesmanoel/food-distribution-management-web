@@ -1,4 +1,5 @@
 import "./Sidebar.css";
+import { NavLink } from "react-router-dom";
 import type { LucideIcon } from "lucide-react";
 import {
   ChartColumn,
@@ -15,16 +16,22 @@ interface Props {
   open: boolean;
 }
 
-export function Sidebar({ open }: Props) {
-  const menuItems: { label: string; icon: LucideIcon; active?: boolean }[] = [
-    { label: "Dashboard", icon: LayoutDashboard, active: true },
-    { label: "Pedidos", icon: ClipboardList },
-    { label: "Clientes", icon: Users },
-    { label: "Produtos", icon: Package },
-    { label: "Relatórios", icon: ChartColumn },
-    { label: "Configurações", icon: Settings },
-  ];
+interface MenuItem {
+  label: string;
+  icon: LucideIcon;
+  to?: string;
+}
 
+const menuItems: MenuItem[] = [
+  { label: "Dashboard", icon: LayoutDashboard, to: "/dashboard" },
+  { label: "Pedidos", icon: ClipboardList },
+  { label: "Clientes", icon: Users, to: "/clientes" },
+  { label: "Produtos", icon: Package },
+  { label: "Relatórios", icon: ChartColumn },
+  { label: "Configurações", icon: Settings },
+];
+
+export function Sidebar({ open }: Props) {
   return (
     <aside className={`sidebar ${open ? "open" : "closed"}`}>
       <div className="sidebar-logo">
@@ -40,17 +47,30 @@ export function Sidebar({ open }: Props) {
       <nav className="sidebar-menu" aria-label="Menu principal">
         {menuItems.map((item) => {
           const Icon = item.icon;
-
-          return (
-            <a
-              className={item.active ? "active" : ""}
-              aria-current={item.active ? "page" : undefined}
-              key={item.label}
-            >
+          const content = (
+            <>
               <span className="sidebar-menu-icon" aria-hidden="true">
                 <Icon size={18} strokeWidth={2.35} />
               </span>
               <span className="sidebar-menu-label">{item.label}</span>
+            </>
+          );
+
+          if (item.to) {
+            return (
+              <NavLink
+                className={({ isActive }) => (isActive ? "active" : undefined)}
+                to={item.to}
+                key={item.label}
+              >
+                {content}
+              </NavLink>
+            );
+          }
+
+          return (
+            <a aria-disabled="true" key={item.label}>
+              {content}
             </a>
           );
         })}

@@ -1,11 +1,18 @@
 import "./Header.css";
 import { Bell, Menu, UserRound } from "lucide-react";
+import { useLocation } from "react-router-dom";
 
 interface Props {
   toggleSidebar: () => void;
 }
 
 export function Header({ toggleSidebar }: Props) {
+  const location = useLocation();
+  const pageInfo =
+    location.pathname === "/clientes"
+      ? { kicker: "Cadastros", title: "Clientes" }
+      : { kicker: "Visão geral", title: "Dashboard" };
+
   return (
     <header className="header">
       <div className="header-left">
@@ -19,8 +26,8 @@ export function Header({ toggleSidebar }: Props) {
         </button>
 
         <div>
-          <span className="header-kicker">Visão geral</span>
-          <strong>Dashboard</strong>
+          <span className="header-kicker">{pageInfo.kicker}</span>
+          <strong>{pageInfo.title}</strong>
         </div>
       </div>
 
