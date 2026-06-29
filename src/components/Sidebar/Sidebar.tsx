@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import type { LucideIcon } from "lucide-react";
 import {
   ArrowLeftRight,
-  ChartColumn,
   ClipboardList,
   LayoutDashboard,
   LogOut,
@@ -29,7 +28,6 @@ const menuItems: MenuItem[] = [
   { label: "Clientes", icon: Users, to: "/clientes" },
   { label: "Produtos", icon: Package, to: "/produtos" },
   { label: "Movimentações", icon: ArrowLeftRight, to: "/movimentacoes" },
-  { label: "Relatórios", icon: ChartColumn },
   { label: "Configurações", icon: Settings },
 ];
 
